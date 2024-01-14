@@ -91,24 +91,21 @@ int quest_5(){//написать сложение матриц 3х3
     return 0;}
 
 int quest_6(){//Написать программу, которая находит в двумерном массиве значения, повторяющиеся два и более раз, и показывает их на экран.
-    int arr[3][3];
-    unsigned int number[3];
+    const int size_array=3;
+    int arr[size_array][size_array];
     std::cout<<"matrix"<<std::endl;
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            arr[i][j]=i+j;
+    for(int i=0;i<size_array;i++){
+        for(int j=0;j<size_array;j++){
+            arr[i][j]=rand()%100;//arr[i][j]=i+j-это если проверять на не случайных числах
             std::cout<<arr[i][j]<<" ";}
         std::cout<<std::endl;}
-    unsigned int count[3]={1};
-    for(int k=0;k<3;k++){
-        for(int n=0;n<3;n++){
-            for(int i=0;i<3;i++){
-                for(int j=0;j<3;j++){
-                    (arr[k][n]==arr[i][j])?number[k]=arr[k][n]:
-                    (count[k]>1)?count[k]++:count[k];}}}}
-    for(int i=0;i<3;i++){
-        if(count[i]!=0){
-        std::cout<<"элемент "<<number[i]<<" cодержиться "<<count[i]<<" раз"<<std::endl;}}
+    for(int str1=0;str1<size_array;str1++){
+        for(int col1=0;col1<size_array;col1++){
+            int flag=0;
+            for(int str2=0;str2<size_array;str2++){
+                for(int col2=0;col2<size_array;col2++){
+                    if(arr[str1][col1]==arr[str2][col2]) flag++;}}
+            if(flag>1&&col1%2==1)std::cout<<"число "<<arr[str1][col1]<<" повторяеться "<<flag<<" раз"<<std::endl;}}
     return 0;}    
 
 int main(){
