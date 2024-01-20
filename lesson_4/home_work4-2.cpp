@@ -1,24 +1,5 @@
 #include<iostream>
 
-
-int search_double_array(){//Написать программу, которая находит в двумерном массиве значения, повторяющиеся два и более раз, и показывает их на экран.
-    const int size_array=3;
-    int arr[size_array][size_array];
-    std::cout<<"matrix"<<std::endl;
-    for(int i=0;i<size_array;i++){
-        for(int j=0;j<size_array;j++){
-            arr[i][j]=rand()%100;//arr[i][j]=i+j-это если проверять на не случайных числах
-            std::cout<<arr[i][j]<<" ";}
-        std::cout<<std::endl;}
-    for(int str1=0;str1<size_array;str1++){
-        for(int col1=0;col1<size_array;col1++){
-            int flag=0;
-            for(int str2=0;str2<size_array;str2++){
-                for(int col2=0;col2<size_array;col2++){
-                    if(arr[str1][col1]==arr[str2][col2]) flag++;}}
-            if(flag>1&&col1%2==1)std::cout<<"число "<<arr[str1][col1]<<" повторяеться "<<flag<<" раз"<<std::endl;}}
-    return 1;}
-
 int X_or_0(){
     std::cout<<"Игра крестики-нолики, выберите:\n1-выбрать X\n2-выбрать 0"<<std::endl;
     int choise;
@@ -34,7 +15,7 @@ int X_or_0(){
         int variant_table[]={3,3};    
         if(choise==1&&count%2==0
          ||choise==2&&count%2==1){//ходит игрок
-            while(true){system("cls");//поменять cls на clear если linux
+            while(true){system("clear");//поменять cls на clear если linux
                 for(int i=0;i<4;i++){//выводим таблицу
                     for(int j=0;j<4;j++){
                         if(i==0)std::cout<<j<<'|';
@@ -63,7 +44,7 @@ int X_or_0(){
         (table[1][0] != '_' && table[1][0] == table[1][1] && table[1][1] == table[1][2])?true:
         (table[2][0] != '_' && table[2][0] == table[2][1] && table[2][1] == table[2][2])?true:false;
         if(win)break;} 
-    system("cls");//поменять cls на clear если linux
+    system("clear");//поменять cls на clear если linux
     std::cout<<"Game Over"<<std::endl;
     for(int i=0;i<4;i++){//выводим таблицу
                 for(int j=0;j<4;j++){
@@ -75,9 +56,7 @@ int X_or_0(){
     return 2;}
 
 int main(){
-    for(int userInput=3;userInput!=0;userInput++){
-        std::cout<<"Введите номер задания для проверки\n0-выход"<<std::endl;
-        std::cin>>userInput;
-        (userInput==1)? userInput=search_double_array():
-        (userInput==2)? userInput=X_or_0():userInput=-1;}
+    X_or_0();
     return 0;}
+
+
