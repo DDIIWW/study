@@ -1,1 +1,0 @@
-std::cout<<"zalip"<<std::endl;
