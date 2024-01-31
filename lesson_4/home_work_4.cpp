@@ -75,6 +75,7 @@ int X_or_0(){
     return 2;}
 
 int main(){
+    setlocale(LC_ALL,"Russian");
     for(int userInput=3;userInput!=0;userInput++){
         std::cout<<"Введите номер задания для проверки\n0-выход"<<std::endl;
         std::cin>>userInput;
