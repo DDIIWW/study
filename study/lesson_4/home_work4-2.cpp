@@ -15,7 +15,7 @@ int X_or_0(){
         int variant_table[]={3,3};    
         if(choise==1&&count%2==0
          ||choise==2&&count%2==1){//ходит игрок
-            while(true){system("clear");//поменять cls на clear если linux
+            while(true){system("cls");//поменять cls на clear если linux
                 for(int i=0;i<4;i++){//выводим таблицу
                     for(int j=0;j<4;j++){
                         if(i==0)std::cout<<j<<'|';
@@ -44,7 +44,7 @@ int X_or_0(){
         (table[1][0] != '_' && table[1][0] == table[1][1] && table[1][1] == table[1][2])?true:
         (table[2][0] != '_' && table[2][0] == table[2][1] && table[2][1] == table[2][2])?true:false;
         if(win)break;} 
-    system("clear");//поменять cls на clear если linux
+    system("clr");//поменять cls на clear если linux
     std::cout<<"Game Over"<<std::endl;
     for(int i=0;i<4;i++){//выводим таблицу
                 for(int j=0;j<4;j++){
